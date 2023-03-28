@@ -1,11 +1,17 @@
-def 41():
-    a = int(input("Введите число"))
-    if a % 3 == 0:
+def lab41():
+    try:
+        a = int(input("Введите число"))
+        b = a % 3
+    except ValueError:
+        print("введено не число")
+    if b == 0 and a != 0:
         print("Число делиться на 3")
+    elif a == 0:
+        print("введен 0")
     else:
         print("Число не делиться на 3")
 
-def 42():
+def lab42():
     try:
         a = int(input("Введите число"))
         b = 100 / a
@@ -16,18 +22,16 @@ def 42():
     else:
         print('Результат деления 100 на введенное число: ', b)
 
-def 43():
-    a = input('Впишите дату в виде 02.11.2022 ').split('.')
-    b = int(a[0])
-    c = int(a[1])
-    if b * c == int(a[2][2:]):
+def lab43():
+    date = input('Впишите дату в виде 02.11.2022 ').split('.')
+    if int(date[0]) * int(date[1]) == int(date[2][2:4]):
         print('Mагия')
     else:
         print('НЕ МАГИЯ')
 
-def 44():
-    a = int(input('Введите номер билета'))
-    a1 = int(len(a))
+def lab44():
+    a = (input('Введите номер билета'))
+    a1 = len(a)
     b = int(a1 / 2)
     sum1 = 0
     sum2 = 0
@@ -39,8 +43,14 @@ def 44():
             sum2 += int(a[j])
         if sum1 == sum2:
             print('Ваш билет счастливый')
-            else:
+        else:
             print('Ваш билет обычный')
     else:
         print('Ваш билет нечетный')
     print(sum1, sum2)
+
+lab41()
+lab42()
+lab43()
+lab44()
+
